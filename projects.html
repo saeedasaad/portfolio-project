@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="images/favicon.svg">
+    <title>Projects |Saeeda - Web Developer & Designer</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<style>
+    /* Projects Page */
+    .project-filters {
+        padding: 1.5rem 0;
+    }
+
+    .filter-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .filter-buttons .btn-small:hover {
+        border-color: var(--secondary-color);
+        transform: translateY(-5px);
+        color: var(--secondary-color);
+    }
+
+    .projects-grid {
+        padding: 3rem 0 5rem;
+    }
+
+    .project-card {
+        width: 480px;
+    }
+
+    .projects-container {
+        display: grid;
+        /* grid-template-columns: 1fr; */
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .project-item {
+        width: 500px;
+        display: grid;
+        gap: 1rem;
+        align-items: center;
+        padding: 2rem;
+        background-color: white;
+
+    }
+
+    .project-image img {
+        border-radius: var(--border-radius);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+    }
+
+    .project-image img:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-category {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+    }
+
+    .project-description {
+        color: var(--gray-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-tech span {
+        background-color: #f1f5f9;
+        color: var(--dark-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+        .projects-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .projects-container {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .project-item {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Header & Navigation Start -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/Black-logo.png" alt="logo">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <button class="btn btn-secondary btn-nav elementor-button"
+                        download>Download
+                        CV</button>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <!-- Header & Navigation End -->
+
+    <!-- Projects Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>A selection of my recent work</p>
+        </div>
+    </section>
+
+
+    <!-- Project Filter Header -->
+    <section class="project-filters">
+        <div class="container">
+            <div class="filter-header">
+                <h2 class="section-title">Browse Projects</h2>
+                <div class="filter-buttons project-filter">
+                    <button class="btn btn-small active" data-filter="all">All</button>
+                    <button class="btn btn-small" data-filter="web">Web Development</button>
+                    <button class="btn btn-small" data-filter="design">UI/UX Design</button>
+                    <button class="btn btn-small" data-filter="ecommerce">E-commerce</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Grid  -->
+    <section class="projects-grid">
+        <div class="container">
+            <div class="projects-container">
+
+                <!-- Project 1  -->
+                <article class="project-item" data-category="web" id="project4">
+                    <div class="project-image">
+                        <img src="images/project1-large.jpg" alt="Corporate website">
+                    </div>
+                    <div class="project-details">
+                        <h3>News Website (API)</h3>
+                        <p class="project-category">Web Development</p>
+                        <p class="project-description">Dynamic news website built using NewsAPI and JavaScript. Users
+                            can browse real-time headlines
+                            by category.</p>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Api</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Live Site</a>
+                    </div>
+                </article>
+
+                <!-- Project 2  -->
+                <article class="project-item" data-category="design" id="project5">
+                    <div class="project-image">
+                        <img src="images/project5-large.jpg" alt="Mobile app design">
+                    </div>
+                    <div class="project-details">
+                        <h3>Fitness Mobile App</h3>
+                        <p class="project-category">UI/UX Design</p>
+                        <p class="project-description">From wireframes to high-fidelity prototypes for a workout
+                            tracking app with personalized training plans.</p>
+                        <div class="project-tech">
+                            <span>Adobe XD</span>
+                            <span>User Testing</span>
+                            <span>iOS/Android</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </article>
+
+                <!-- Project 3  -->
+                <article class="project-item" data-category="ecommerce" id="project3">
+                    <div class="project-image">
+                        <img src="images/project3-large.jpg" alt="Artist portfolio">
+                    </div>
+                    <div class="project-details">
+                        <h3>Artist Portfolio & Shop</h3>
+                        <p class="project-category">E-commerce</p>
+                        <p class="project-description">Custom WooCommerce solution for a visual artist featuring an
+                            immersive gallery and seamless purchasing experience for original artworks.</p>
+                        <div class="project-tech">
+                            <span>WordPress</span>
+                            <span>WooCommerce</span>
+                            <span>Custom Theme</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Live Site</a>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-item" data-category="web" id="project1">
+                    <div class="project-image">
+                        <img src="images/project1-large.jpg" alt="E-commerce website">
+                    </div>
+                    <div class="project-details">
+                        <h3>Modern E-commerce Platform</h3>
+                        <p class="project-category">Web Development</p>
+                        <p class="project-description">A fully responsive online store built with React, Node.js, and
+                            MongoDB. Features include product filtering, cart functionality, and secure checkout.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe API</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Live Site</a>
+                    </div>
+                </article>
+
+
+                <!-- Project 5  -->
+                <article class="project-item" data-category="design" id="project2">
+                    <div class="project-image">
+                        <img src="images/project2-large.jpg" alt="SaaS dashboard">
+                    </div>
+                    <div class="project-details">
+                        <h3>SaaS Analytics Dashboard</h3>
+                        <p class="project-category">UI/UX Design</p>
+                        <p class="project-description">Dashboard interface for a data analytics platform. Focused on
+                            making complex data accessible through clean visualizations and intuitive navigation.</p>
+                        <div class="project-tech">
+                            <span>Figma</span>
+                            <span>User Research</span>
+                            <span>Design System</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </article>
+
+                <!-- - Project 6  -->
+                <article class="project-item" data-category="ecommerce" id="project6">
+                    <div class="project-image">
+                        <img src="images/project6-large.jpg" alt="Subscription service">
+                    </div>
+                    <div class="project-details">
+                        <h3>Subscription Box Service</h3>
+                        <p class="project-category">E-commerce</p>
+                        <p class="project-description">Custom Shopify solution with subscription functionality and
+                            integrated inventory management.</p>
+                        <div class="project-tech">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>Subscription App</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Live Site</a>
+                    </div>
+                </article>
+
+                <!-- Project 7  -->
+                <article class="project-item" data-category="web" id="project4">
+                    <div class="project-image">
+                        <img src="images/project4-large.jpg" alt="Corporate website">
+                    </div>
+                    <div class="project-details">
+                        <h3>Corporate Website Redesign</h3>
+                        <p class="project-category">Web Development</p>
+                        <p class="project-description">Complete redesign of a financial services company website with
+                            improved information architecture and performance optimizations.</p>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>GSAP</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Live Site</a>
+                    </div>
+                </article>
+
+                <!-- Project 8  -->
+                <article class="project-item" data-category="design" id="project5">
+                    <div class="project-image">
+                        <img src="images/project5-large.jpg" alt="Mobile app design">
+                    </div>
+                    <div class="project-details">
+                        <h3>Fitness Mobile App</h3>
+                        <p class="project-category">UI/UX Design</p>
+                        <p class="project-description">From wireframes to high-fidelity prototypes for a workout
+                            tracking app with personalized training plans.</p>
+                        <div class="project-tech">
+                            <span>Adobe XD</span>
+                            <span>User Testing</span>
+                            <span>iOS/Android</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </article>
+
+                <!-- - Project 9  -->
+                <article class="project-item" data-category="ecommerce" id="project6">
+                    <div class="project-image">
+                        <img src="images/project6-large.jpg" alt="Subscription service">
+                    </div>
+                    <div class="project-details">
+                        <h3>Subscription Box Service</h3>
+                        <p class="project-category">E-commerce</p>
+                        <p class="project-description">Custom Shopify solution with subscription functionality and
+                            integrated inventory management.</p>
+                        <div class="project-tech">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>Subscription App</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">View Live Site</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!--   Projects Grid End   -->
+
+    <!-- Call to Action Start -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to start your project?</h2>
+            <p>I'm currently available for internship or freelance work. Let's connect and build something great
+                together.</p>
+            <a href="contact.html" class="btn btn-secondary elementor-button">Get in Touch</a>
+        </div>
+    </section>
+    <!-- Call to Action End -->
+
+    <!-- Footer Section Start-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="">
+                    <p>Full-stack web developer passionate about creating modern and efficient web applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="mailto:#">portfolio@gmail.com</a></li>
+                        <li><a href="tel:#">0316-XXXXXXX</a></li>
+                        <li>
+                            <div class="social-links">
+                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Portfolio. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End-->
+
+    <!-- Scroll to Top Button (same as index.html) -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.project-filter button');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    projectItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        if (filterValue === 'all' || itemCategory === filterValue) {
+                            item.style.display = 'grid';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            projectItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+        });
+
+
+
+        const socialLinks = document.querySelectorAll('.social-links a');
+
+        socialLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'translateY(-3px)';
+            });
+
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+
+</html>
