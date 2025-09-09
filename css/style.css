@@ -759,7 +759,7 @@ ul {
         align-items: center;
     }
 
-        .project-card {
+    .project-card {
         flex: 0 1 calc(100% - 1rem);
         max-width: calc(100% - 1rem);
     }
@@ -803,4 +803,12 @@ ul {
         flex-direction: column;
         text-align: center;
     }
+
+    .btn,
+    .elementor-button {
+
+        padding: 0.65rem 1rem;
+        font-size: 16px;
+    }
+
 }
